@@ -5,7 +5,11 @@
     // verify that it's in proper format
 // API call - grab info
 
-const input = document.getElementById('input');
+const inputButton = document.getElementById('button');
 
-// mouse click ??
+inputButton.addEventListener('click', function(e) {
+    console.log("test");
 
+    //you need this to prevent the weird page reloading ???
+    e.preventDefault();
+});
