@@ -8,8 +8,14 @@
 const inputButton = document.getElementById('button');
 
 inputButton.addEventListener('click', function(e) {
-    console.log("test");
-
+  
+    const input = document.getElementById('input').value;
+    //test it for length, html doesn't seem to work well
+    if(input.length != 5){
+        // you suck! try again
+        console.log("oops");
+    }
+    console.log(input);
     //you need this to prevent the weird page reloading ???
     e.preventDefault();
 });
