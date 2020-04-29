@@ -25,6 +25,10 @@ inputButton.addEventListener('click', function(e) {
         
                 //insert alert
                 container.insertBefore(div, container);
+                        //timeout after 3 seconds
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
     }
     else {
         console.log(input);
