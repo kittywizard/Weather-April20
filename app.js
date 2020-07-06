@@ -13,22 +13,8 @@ inputButton.addEventListener('click', function(e) {
     const input = document.getElementById('input').value;
     //test it for length, html doesn't seem to work well
     if(input.length != 5){
-        //better error
-        console.log("oops");
 
-        const div = document.createElement('div');
-        div.className = 'alert alert-danger';
-
-        div.appendChild(document.createTextNode("Please try again"));
-                //get parent
-                const container = document.querySelector('.mainInput');
-        
-                //insert alert
-                container.insertBefore(div, container);
-                        //timeout after 3 seconds
-        setTimeout(() => {
-            this.clearAlert();
-        }, 3000);
+        errorMessage("Please enter a number that is 5 digits.");
     }
     else {
         console.log(input);
@@ -36,3 +22,23 @@ inputButton.addEventListener('click', function(e) {
     //you need this to prevent the weird page reloading ???
     e.preventDefault();
 });
+
+function errorMessage(e) {
+
+    //create a div and apply bootstrap class to it
+    const div = document.createElement('div');
+    div.className = 'alert alert-danger';
+    
+    //create text node with error message
+    div.appendChild(document.createTextNode(e));
+    
+    //get parent
+    const container = document.querySelector('.mainInput');
+
+    //insert alert
+    container.insertBefore(div, container);
+                    
+    setTimeout(() => {
+        this.clearAlert();
+    }, 3000);
+}
